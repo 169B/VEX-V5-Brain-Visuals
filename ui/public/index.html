@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEX V5 Brain Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>VEX V5 Brain Simulator</h1>
+            <div class="connection-status">
+                <span id="status-dot" class="status-dot disconnected"></span>
+                <span id="status-text">Disconnected</span>
+            </div>
+        </header>
+        
+        <main>
+            <!-- Brain Screen -->
+            <section class="brain-section">
+                <h2>Brain Display</h2>
+                <div class="brain-container">
+                    <canvas id="brain-screen" width="480" height="272"></canvas>
+                    <div class="lcd-buttons">
+                        <button id="lcd-btn-left" class="lcd-btn">◀</button>
+                        <button id="lcd-btn-center" class="lcd-btn">●</button>
+                        <button id="lcd-btn-right" class="lcd-btn">▶</button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Mode Control -->
+            <section class="mode-section">
+                <h2>Robot Mode</h2>
+                <div class="mode-buttons">
+                    <button id="mode-disabled" class="mode-btn active">Disabled</button>
+                    <button id="mode-autonomous" class="mode-btn">Autonomous</button>
+                    <button id="mode-opcontrol" class="mode-btn">Driver Control</button>
+                </div>
+            </section>
+            
+            <!-- Controller -->
+            <section class="controller-section">
+                <h2>Controller</h2>
+                <div class="controller">
+                    <div class="controller-joysticks">
+                        <div class="joystick-container">
+                            <canvas id="joystick-left" width="120" height="120"></canvas>
+                            <span>Left Stick</span>
+                        </div>
+                        <div class="joystick-container">
+                            <canvas id="joystick-right" width="120" height="120"></canvas>
+                            <span>Right Stick</span>
+                        </div>
+                    </div>
+                    
+                    <div class="controller-buttons">
+                        <div class="dpad">
+                            <button id="btn-up" class="ctrl-btn">▲</button>
+                            <div class="dpad-row">
+                                <button id="btn-left" class="ctrl-btn">◀</button>
+                                <button id="btn-down" class="ctrl-btn">▼</button>
+                                <button id="btn-right" class="ctrl-btn">▶</button>
+                            </div>
+                        </div>
+                        
+                        <div class="face-buttons">
+                            <button id="btn-y" class="ctrl-btn face-btn">Y</button>
+                            <div class="face-row">
+                                <button id="btn-x" class="ctrl-btn face-btn">X</button>
+                                <button id="btn-b" class="ctrl-btn face-btn">B</button>
+                            </div>
+                            <button id="btn-a" class="ctrl-btn face-btn">A</button>
+                        </div>
+                    </div>
+                    
+                    <div class="shoulder-buttons">
+                        <div class="shoulder-group">
+                            <button id="btn-l1" class="ctrl-btn shoulder">L1</button>
+                            <button id="btn-l2" class="ctrl-btn shoulder">L2</button>
+                        </div>
+                        <div class="shoulder-group">
+                            <button id="btn-r1" class="ctrl-btn shoulder">R1</button>
+                            <button id="btn-r2" class="ctrl-btn shoulder">R2</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Autonomous Selector -->
+            <section class="auton-section">
+                <h2>Autonomous Selector</h2>
+                <div class="auton-tabs">
+                    <button id="tab-match" class="tab-btn active">Match</button>
+                    <button id="tab-skills" class="tab-btn">Skills</button>
+                </div>
+                <div id="match-autos" class="auton-list"></div>
+                <div id="skills-autos" class="auton-list hidden"></div>
+            </section>
+            
+            <!-- Motor Telemetry -->
+            <section class="motor-section">
+                <h2>Motor Telemetry</h2>
+                <div class="motor-grid" id="motor-grid">
+                    <!-- Motor slots will be populated by JS -->
+                </div>
+            </section>
+            
+            <!-- Console Log -->
+            <section class="console-section">
+                <h2>Console</h2>
+                <div id="console" class="console"></div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>VEX V5 Brain Simulator | Host Mode</p>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
