@@ -1,0 +1,29 @@
+# Build artifacts
+build/
+bin/
+*.o
+*.d
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile.cmake
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node.js
+ui/node_modules/
+ui/package-lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
