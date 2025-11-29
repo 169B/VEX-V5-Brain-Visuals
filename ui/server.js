@@ -13,8 +13,8 @@ const WS_PORT = process.env.WS_PORT || 9000;
 // Create Express app
 const app = express();
 
-// Serve static files from the ui directory
-app.use(express.static(__dirname));
+// Serve static files from the public directory only
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Health check endpoint
 app.get('/health', (req, res) => {

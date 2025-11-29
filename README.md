@@ -40,9 +40,10 @@ A complete PROS-style template that enables running VEX V5 robot code on a devel
 ├── ui/
 │   ├── package.json
 │   ├── server.js                  # Express + WebSocket server
-│   ├── index.html                 # Fake Brain UI
-│   ├── styles.css
-│   └── app.js                     # Client-side JS
+│   └── public/
+│       ├── index.html             # Fake Brain UI
+│       ├── styles.css
+│       └── app.js                 # Client-side JS
 ├── Makefile
 ├── CMakeLists.txt
 └── README.md
